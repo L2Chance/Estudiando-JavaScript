@@ -1,0 +1,77 @@
+Una empresa de análisis digital quiere construir una API REST para examinar datos de una red social ficticia.
+La información proviene de la API pública JSONPlaceholder:
+
+Usuarios → https://jsonplaceholder.typicode.com/users
+
+Publicaciones → https://jsonplaceholder.typicode.com/posts
+
+Comentarios → https://jsonplaceholder.typicode.com/comments
+
+Tu tarea es desarrollar una API en Node.js con Express, sin base de datos, que obtenga datos de esta fuente y ofrezca endpoints para analizarlos, crear y 
+modificar recursos (de forma simulada).
+
+- Requisitos Técnicos
+
+* Framework: Express.js
+* Código modular (rutas, controladores, servicios, middlewares, utils)
+* Manejo de asincronía (async/await) y errores (try/catch)
+* Validación de los datos obtenidos desde la API externa
+* Uso de:
+
+    - Closures
+
+    - Prototipos
+
+    - Timers / Event Loop
+
+    - Coerción
+
+    - Middlewares globales y específicos
+
+
+Middlewares requeridos
+
+* Middleware global de logging → Registra método, ruta y timestamp de cada request.
+
+* Middleware de validación → Revisa parámetros y body antes de procesar ciertas rutas.
+
+* Middleware de error handling → Captura errores y devuelve respuestas con códigos y mensajes adecuados.
+
+Usuarios
+
+| Método  | Ruta                   | Descripción                                                    |
+| :------ | :--------------------- | :------------------------------------------------------------- |
+| **GET** | `/usuarios`            | Devuelve el listado de usuarios válidos (sin datos faltantes). |
+| **GET** | `/usuarios/:id`        | Devuelve un usuario específico con sus publicaciones.          |
+| **GET** | `/usuarios/buscar`     | Permite buscar usuarios por ciudad o email (query params).     |
+| **GET** | `/usuarios/duplicados` | Devuelve usuarios con emails o usernames repetidos.            |
+| **GET** | `/usuarios/ciudad/top` | Indica qué ciudad tiene más usuarios registrados.              |
+
+Publicaciones
+
+| Método  | Ruta                                | Descripción                                                          |
+| :------ | :---------------------------------- | :------------------------------------------------------------------- |
+| **GET** | `/publicaciones`                    | Devuelve todas las publicaciones.                                    |
+| **GET** | `/publicaciones/usuario/:idUsuario` | Lista todas las publicaciones del usuario especificado.              |
+| **GET** | `/publicaciones/top`                | Devuelve el ranking de los 5 usuarios con más publicaciones.         |
+| **GET** | `/publicaciones/buscar`             | Busca publicaciones por palabra clave (en título o cuerpo).          |
+| **GET** | `/publicaciones/sin-usuario`        | Devuelve los usuarios que no tienen publicaciones.                   |
+| **GET** | `/publicaciones/proporcion`         | Calcula el porcentaje de publicaciones por usuario.                  |
+| **GET** | `/publicaciones/ciudad-promedio`    | Indica qué ciudad tiene, en promedio, más publicaciones por usuario. |
+
+
+CRUD 
+
+| Método     | Ruta                 | Descripción                                                                                             |
+| :--------- | :------------------- | :------------------------------------------------------------------------------------------------------ |
+| **POST**   | `/publicaciones`     | Crea una nueva publicación (simulada). Debe validar el body y devolver la respuesta de JSONPlaceholder. |
+| **PUT**    | `/publicaciones/:id` | Actualiza una publicación (simulada). Valida que el ID y los campos sean correctos.                     |
+| **DELETE** | `/publicaciones/:id` | Elimina una publicación (simulada). Devuelve un mensaje de éxito o error.                               |
+
+Extras conceptuales
+
+* Implementar un closure que mantenga un contador de requests exitosos.
+* Definir un prototipo Usuario o Publicacion con métodos útiles (esValido(), resumen(), etc.).
+* Usar un setInterval para simular una tarea automática, como recalcular el “ranking top 5” cada 30 segundos.
+* Aplicar coerción intencionada en alguna validación o conversión de tipo.
+* Manejar errores de red y respuestas inválidas (por ejemplo, si la API externa no responde).

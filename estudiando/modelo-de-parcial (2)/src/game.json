@@ -1,0 +1,92 @@
+{
+  "guardians": [
+    {
+      "id": 1,
+      "name": "Jorgito",
+      "level": 1,
+      "xp": 0,
+      "energy": 100,
+      "skills": ["correr", "saltar"],
+      "items": [{ "name": "pocion de vida", "power": 10 }]
+    },
+    {
+      "id": 2,
+      "name": "Captain Walker",
+      "level": 1,
+      "xp": 0,
+      "energy": 100,
+      "skills": [],
+      "items": []
+    },
+    {
+      "id": 3,
+      "name": "Assasin",
+      "level": 1,
+      "xp": 0,
+      "energy": 59,
+      "skills": ["Fuego"],
+      "items": []
+    },
+    {
+      "id": 4,
+      "name": "Counser",
+      "level": 1,
+      "xp": 0,
+      "energy": 100,
+      "skills": [],
+      "items": []
+    },
+    {
+      "id": 5,
+      "name": "Makima",
+      "level": 1,
+      "xp": 0,
+      "energy": 100,
+      "skills": [],
+      "items": []
+    }
+  ],
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Milanga",
+      "difficulty": 4,
+      "energyCost": 5,
+      "rewardFormula": "difficulty * 2 + energyCost * 2",
+      "requiredSkill": "Choclo"
+    },
+    {
+      "id": 2,
+      "title": "Desafio del Mar Muerto",
+      "difficulty": 7,
+      "energyCost": 20,
+      "rewardFormula": "difficulty * 2 + energyCost * 2",
+      "requiredSkill": "Fuego"
+    },
+    {
+      "id": 3,
+      "title": "Terminación Universal",
+      "difficulty": 10,
+      "energyCost": 70,
+      "rewardFormula": "difficulty * 2 + energyCost * 2",
+      "requiredSkill": "Agua"
+    },
+    {
+      "id": 4,
+      "title": "Terminación Universal",
+      "difficulty": 10,
+      "energyCost": 70,
+      "rewardFormula": "difficulty * 2 + energyCost * 2",
+      "requiredSkill": "Agua"
+    }
+  ],
+  "duels": [],
+  "challengesAttemps": [
+    {
+      "challengeId": 2,
+      "guardianId": 3,
+      "experienciaGanada": 0,
+      "status": "failed"
+    }
+  ]
+}
