@@ -1,49 +1,18 @@
-/*Una consultora de software necesita analizar datos de una red social ficticia.
-Los datos provienen de la API pública JSONPlaceholder:
+const fetchApi = require("./fetch");
+const PublicacionService = require("./PublicacionService");
+const UsuarioService = require("./UsuarioService");
 
-Usuarios: https://jsonplaceholder.typicode.com/users
+async function main() {
+  // usuarios y publicaciones son 2 array de objetos, uno con los usuarios y otro con las publicaciones.
+  const usuarios = await fetchApi("https://jsonplaceholder.typicode.com/users");
+  const publicaciones = await fetchApi(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
 
-Publicaciones: https://jsonplaceholder.typicode.com/posts
+  const usuarioService = new UsuarioService(usuarios);
+  const publicacionService = new PublicacionService(publicaciones);
 
-Tu tarea será diseñar y programar un sistema en JavaScript que permita trabajar con esta información de forma eficiente y lógica.
-
-Problemática
-Usuarios
-
-- Se necesita poder identificar y trabajar con los usuarios registrados en la plataforma. xx
-- Se debe poder buscar usuarios según distintos criterios (por ejemplo, correo electrónico o ciudad). xx
-- La empresa quiere detectar si hay usuarios duplicados en base a su email o nombre de usuario. xx
-- También requieren un análisis que indique qué ciudad tiene más usuarios registrados. xx
-
-Publicaciones
-
-- Cada publicación pertenece a un usuario. xx
-- Se debe poder listar todas las publicaciones de un usuario. xx
-- La empresa quiere detectar qué usuarios publican más contenido y obtener un ranking con los primeros 5. xx
-- También necesitan una función que encuentre todas las publicaciones que contengan una determinada palabra clave en el título o en el contenido. xx
-
-
-*** La empresa quiere un análisis que permita cruzar información:
-
-- Encontrar si existen usuarios que no tengan ninguna publicación. xx 
-- Detectar cuál es la proporción de publicaciones por usuario en relación al total de publicaciones (ejemplo: “El usuario X genera el 12% del total de publicaciones”).xx
-- Generar un informe con la ciudad cuyos usuarios, en promedio, publican más contenido. 
-
-**Condiciones adicionales**
-
-- El sistema debe ser robusto: manejar errores de red y validar los datos recibidos de la API.
-- El código debe aplicar conceptos vistos en clase: asincronía, manejo de errores, prototipos, closures, coerción, timers/event loop y organización modular.
-
-**Condiciones adicionales**
-
-- El sistema debe manejar asincronía (fetch, async/await) y errores de red.
-- Se deben validar los datos recibidos: si falta información crítica en un usuario, comentario o álbum, debe considerarse inválido.
-- El proyecto debe aplicar conceptos como prototipos, closures, coerción, timers/event loop y organización modular.*/
-
-import apiConfig from "./apiconfig.js"
-
-function main(){
-    apiConfig("https://jsonplaceholder.typicode.com/users")
+  usuarioService.buscarCiudadConMásUsuariosRegistrados();
 }
 
 main();
