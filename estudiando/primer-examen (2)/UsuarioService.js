@@ -60,13 +60,19 @@ class usuarioService {
       {}
     );
 
+    console.log(conteoDeUsuariosPorCiudad);
+
     const ciudadConMasUsuarios = Object.entries(
       conteoDeUsuariosPorCiudad
     ).reduce((mayor, actual) => {
       const [ciudad, cantidad] = actual;
       const [ciudadMayor, cantidadMayor] = mayor;
 
-      return cantidad > cantidadMayor ? actual : mayor;
+      if (cantidad > cantidadMayor) {
+        return actual;
+      } else {
+        return mayor;
+      }
     });
 
     console.log(ciudadConMasUsuarios);

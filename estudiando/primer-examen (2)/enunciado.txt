@@ -10,17 +10,17 @@ Tu tarea será diseñar y programar un sistema en JavaScript que permita trabaja
 Problemática
 Usuarios
 
-- Se necesita poder identificar y trabajar con los usuarios registrados en la plataforma. 
-- Se debe poder buscar usuarios según distintos criterios (por ejemplo, correo electrónico o ciudad). 
-- La empresa quiere detectar si hay usuarios duplicados en base a su email o nombre de usuario. 
-- También requieren un análisis que indique qué ciudad tiene más usuarios registrados. 
+- Se necesita poder identificar y trabajar con los usuarios registrados en la plataforma. x
+- Se debe poder buscar usuarios según distintos criterios (por ejemplo, correo electrónico o ciudad).  x
+- La empresa quiere detectar si hay usuarios duplicados en base a su email o nombre de usuario. x
+- También requieren un análisis que indique qué ciudad tiene más usuarios registrados. x
 
 Publicaciones
 
-- Cada publicación pertenece a un usuario. 
-- Se debe poder listar todas las publicaciones de un usuario. 
-- La empresa quiere detectar qué usuarios publican más contenido y obtener un ranking con los primeros 5. 
-- También necesitan una función que encuentre todas las publicaciones que contengan una determinada palabra clave en el título o en el contenido. 
+- Cada publicación pertenece a un usuario. x
+- Se debe poder listar todas las publicaciones de un usuario. x
+- La empresa quiere detectar qué usuarios publican más contenido y obtener un ranking con los primeros 5. x
+- También necesitan una función que encuentre todas las publicaciones que contengan una determinada palabra clave en el título o en el contenido. x
 
 
 *** La empresa quiere un análisis que permita cruzar información:
