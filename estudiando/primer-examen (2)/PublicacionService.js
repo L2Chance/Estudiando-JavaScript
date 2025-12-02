@@ -40,6 +40,14 @@ class PublicacionService {
       }
     });
   }
+
+  obtenerProporcionDePublicacionesPorUsuario() {
+    let cont = 0;
+
+    this.arrayDePublicaciones.foreach((publicacion) => {
+      cont = cont + 1;
+    });
+  }
 }
 
 module.exports = PublicacionService;

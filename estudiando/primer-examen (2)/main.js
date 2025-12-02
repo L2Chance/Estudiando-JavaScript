@@ -13,8 +13,6 @@ async function main() {
   const usuarioService = new UsuarioService(usuarios);
   const publicacionService = new PublicacionService(publicaciones);
   const cruzaService = new CruzaService(publicaciones, usuarios);
-
-  cruzaService.encontrarUsuariosSinPublicaciones();
 }
 
 main();
